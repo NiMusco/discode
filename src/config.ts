@@ -1,0 +1,29 @@
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const {
+  DISCORD_TOKEN,
+  DISCORD_CLIENT_ID,
+  DISCORD_GUILD_ID,
+  DISCORD_WELCOME_CHANNEL,
+  DB_HOST,
+  DB_NAME,
+  DB_USER,
+  DB_PASSWORD
+} = process.env;
+
+if (!DISCORD_TOKEN || !DISCORD_CLIENT_ID || !DISCORD_GUILD_ID) {
+  throw new Error("Missing environment variables");
+}
+
+export const config = {
+  DISCORD_TOKEN,
+  DISCORD_CLIENT_ID,
+  DISCORD_GUILD_ID,
+  DISCORD_WELCOME_CHANNEL,
+  DB_HOST,
+  DB_NAME,
+  DB_USER,
+  DB_PASSWORD
+};
